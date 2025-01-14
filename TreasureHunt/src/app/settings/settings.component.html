@@ -1,0 +1,33 @@
+<a class="settings-button" (click)="openSettingsModal()">Settings
+</a>
+<app-modal [receivedModalId]="settingsModalId" [formGroup]="this.settingsForm" (save)="settingsEvent()" (cancel)="cancelEvent()">
+    <form [formGroup]="this.settingsForm" class="settings-form">
+        <label for="settings-guesses-allowed" class="settings-label">Guesses Allowed</label>
+        <input 
+            id="settings-guesses-allowed"
+            class="guesses-allowed"
+            type="number"
+            formControlName="guessesAllowed"
+            placeholder="Please enter a number"
+            min="1"
+            [ngClass]="this.settingsForm.get('guessesAllowed')?.touched && this.settingsForm.get('guessesAllowed')?.errors ? 'error-input guesses-allowed-error' : ''"
+            (keydown.enter)="settingsEvent()">
+        <div class="form-errors" *ngIf="this.settingsForm.get('guessesAllowed')?.touched && this.settingsForm.get('guessesAllowed')?.errors">
+            Please enter a number greater than 0
+        </div>
+        <label for="settings-boxes" class="settings-label">Boxes</label>
+        <input 
+            id="settings-boxes"
+            class="boxes"
+            type="number"
+            formControlName="boxes"
+            placeholder="Please enter a number"
+            min="2"
+            max="21"
+            [ngClass]="this.settingsForm.get('boxes')?.touched && this.settingsForm.get('boxes')?.errors ? 'error-input' : ''"
+            (keydown.enter)="settingsEvent()">
+        <div class="form-errors" *ngIf="this.settingsForm.get('boxes')?.touched && this.settingsForm.get('boxes')?.errors">
+            Please enter a number between 2 and 21
+        </div>
+    </form>
+</app-modal>

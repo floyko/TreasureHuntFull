@@ -1,0 +1,37 @@
+<div class="modal" *ngIf="isOpen(receivedModalId)" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">{{ config.title }}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal(receivedModalId)">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="horizontal-line"></div>
+      <div class="modal-body">
+        <ng-content *ngIf="config.title == 'Login'; else isRegister" select=".login-form"></ng-content>
+        <ng-template #isRegister>
+          <ng-content *ngIf="config.title == 'Register'; else isSettings" select=".register-form"></ng-content>
+        </ng-template>
+        <ng-template #isSettings>
+          <ng-content *ngIf="config.title == 'Settings'; else isHistory" select=".settings-form"></ng-content>
+        </ng-template>
+        <ng-template #isHistory>
+          <ng-content *ngIf="config.title == 'History'; else isResetPassword" select=".history-form"></ng-content>
+        </ng-template>
+        <ng-template #isResetPassword>
+          <ng-content *ngIf="config.title == 'Reset Password'; else other" select=".reset-password-form"></ng-content>
+        </ng-template>
+        <ng-template #other>
+          <p>{{ config.description }}</p>
+        </ng-template>
+      </div>
+      <div class="modal-footer">
+        <div class="horizontal-line"></div>
+        <button mat-stroked-button type="button" class="button-close" (click)="closeModal(receivedModalId)">{{ config.closeButton }}</button>
+        <button *ngIf="config.saveButton" mat-stroked-button type="button" class="button-save" (click)="saveModal()">{{ config.saveButton }}</button>
+        <button *ngIf="config.extraButton" mat-stroked-button type="button" class="button-extra" (click)="extraModal(receivedModalId)">{{ config.extraButton }}</button>
+      </div>
+    </div>
+  </div>
+</div>

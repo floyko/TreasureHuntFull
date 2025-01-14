@@ -1,0 +1,33 @@
+ .bottom {
+  border-bottom: 1px solid black;
+ }
+
+ .cell-right {
+  border-right: 1px solid black;
+ }
+
+ .history-button {
+    cursor: pointer;
+    margin-right: 10px;
+    float: right;
+    line-height: 55px;
+ }
+
+ .history-button:hover {
+   color: blue;
+ }
+ 
+ .no-stats {
+  text-align: center;
+  font: 30px bold;
+ }
+
+ td {
+  text-align: center;
+  border-left: 1px solid black;
+ }
+
+ th {
+  text-align: center;
+  width: 145px;
+ }

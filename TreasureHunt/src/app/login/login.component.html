@@ -1,0 +1,29 @@
+<button mat-stroked-button (click)="openLoginModal()">Login</button>
+<app-modal [receivedModalId]="loginModalId" [formGroup]="this.loginForm" (save)="loginEvent()" (cancel)="cancelEvent()" (extra)="registerEvent()">
+    <form [formGroup]="this.loginForm" class="login-form">
+        <label for="login-email" class="login-label">Email</label>
+        <input 
+            id="login-email"
+            class="email"
+            type="email"
+            formControlName="email"
+            placeholder="Please enter your email"
+            (keydown.enter)="loginEvent()"
+            [ngClass]="(this.loginForm.get('email')?.touched && this.loginForm.get('email')?.errors) || this.backendError.email ? 'error-input email-error' : ''">
+        <div class="form-errors" *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.errors || this.backendError.email">
+            {{this.errors.email}}
+        </div>
+        <label for="login-password" class="login-label">Password</label>
+        <input
+            id="login-password"
+            class="password"
+            type="password"
+            formControlName="password"
+            placeholder="*********"
+            (keydown.enter)="loginEvent()"
+            [ngClass]="(this.loginForm.get('password')?.touched && this.loginForm.get('password')?.errors) || this.backendError.password ? 'error-input' : ''">
+        <div class="form-errors" *ngIf="this.loginForm.get('password')?.touched && this.loginForm.get('password')?.errors || this.backendError.password">
+            {{this.errors.password}}
+        </div>
+    </form>
+</app-modal>

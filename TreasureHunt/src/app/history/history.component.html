@@ -1,0 +1,92 @@
+<a (click)="openHistoryModal()" role="button" class="history-button">
+    History
+ </a>
+<app-modal [receivedModalId]="historyModalId">
+    <div class="history-form">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Your Latest Stats">
+                <table mat-table class="bottom" *ngIf="yourStats.length > 0; else noYourStats" [dataSource]="yourStats">
+                    <ng-container matColumnDef="ys-id" >
+                        <th mat-header-cell *matHeaderCellDef> Game # </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="ys-total-guesses">
+                        <th mat-header-cell *matHeaderCellDef> Total Guesses </th>
+                        <td mat-cell *matCellDef="let element"> {{element.TotalGuesses}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="ys-guesses-allowed">
+                        <th mat-header-cell *matHeaderCellDef> Guesses Allowed </th>
+                        <td mat-cell *matCellDef="let element"> {{element.GuessesAllowed}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="ys-boxes">
+                        <th mat-header-cell *matHeaderCellDef> Boxes </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Boxes}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="ys-win-lose">
+                        <th mat-header-cell *matHeaderCellDef> Win/Lose </th>
+                        <td mat-cell class="cell-right" *matCellDef="let element"> {{element.WinLose}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="yourStatsColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: yourStatsColumns;"></tr>
+                </table>
+                <ng-template #noYourStats>
+                    <p class="no-stats">No Stats found!</p>
+                </ng-template>
+            </mat-tab>
+            <mat-tab label="10 Latest Games">
+                <table mat-table class="bottom" *ngIf="allUserStats.length > 0; else noAllUserStats" [dataSource]="allUserStats">
+                    <ng-container matColumnDef="au-id" >
+                        <th mat-header-cell *matHeaderCellDef> Game # </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="au-username">
+                        <th mat-header-cell *matHeaderCellDef> Username </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Username}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="au-total-guesses">
+                        <th mat-header-cell *matHeaderCellDef> Total Guesses </th>
+                        <td mat-cell *matCellDef="let element"> {{element.TotalGuesses}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="au-guesses-allowed">
+                        <th mat-header-cell *matHeaderCellDef> Guesses Allowed </th>
+                        <td mat-cell *matCellDef="let element"> {{element.GuessesAllowed}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="au-boxes">
+                        <th mat-header-cell *matHeaderCellDef> Boxes </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Boxes}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="au-win-lose">
+                        <th mat-header-cell *matHeaderCellDef> Win/Lose </th>
+                        <td mat-cell class="cell-right" *matCellDef="let element"> {{element.WinLose}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="allUserColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: allUserColumns;"></tr>
+                </table>
+                <ng-template #noAllUserStats>
+                    <p class="no-stats">No Stats found!</p>
+                </ng-template>
+            </mat-tab>
+            <mat-tab label="Top 10 Users">
+                <table mat-table class="bottom" *ngIf="rankedStats.length > 0; else noStats" [dataSource]="rankedStats">
+                    <ng-container matColumnDef="r-username">
+                        <th mat-header-cell *matHeaderCellDef> Username </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Username}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="r-total-wins">
+                        <th mat-header-cell *matHeaderCellDef> Total Wins </th>
+                        <td mat-cell *matCellDef="let element"> {{element.TotalWins}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="r-total-losses">
+                        <th mat-header-cell *matHeaderCellDef> Total Losses </th>
+                        <td mat-cell class="cell-right" *matCellDef="let element"> {{element.TotalLosses}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="rankedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: rankedColumns;"></tr>
+                </table>
+                <ng-template #noStats>
+                    <p class="no-stats">No Stats found!</p>
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>          
+    </div>
+</app-modal>

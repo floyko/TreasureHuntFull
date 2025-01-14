@@ -1,0 +1,40 @@
+.boxes {
+    border: solid 1px black;
+    line-height: 25px;
+    width: 65%;
+    font-size: 18px;
+    margin: 10px 0px 0px 0px;
+}
+
+.guesses-allowed {
+    border: solid 1px black;
+    line-height: 25px;
+    width: 65%;
+    font-size: 18px;
+    margin: 10px 0px 25px 0px;
+}
+
+.guesses-allowed-error {
+    margin-bottom: 0px;
+}
+
+.settings-button {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+    line-height: 55px;
+}
+
+.settings-button:hover {
+    color: blue;
+}
+
+.settings-form {
+    height: 120px;
+}
+
+.settings-label {
+    width: 30%;
+    display: inline-block;
+    margin-top: 10px;
+}

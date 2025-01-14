@@ -1,0 +1,67 @@
+  .button-close {
+    float: right;
+    margin: 0px 5px 5px 0px;
+  }
+
+  .button-extra {
+    float: left;
+    margin: 0px 0px 5px 5px;
+  }
+
+  .button-save {
+    float: right;
+    margin: 0px 5px 5px 5px;
+  }
+
+  .close {
+    margin: 5px 10px 0px 0px;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .horizontal-line {
+    border: 1px solid lightgrey;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .modal {
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 25px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: fit-content;
+    z-index: 1000;
+  }
+
+  .modal:has(.history-form) {
+    width: fit-content;
+  }
+
+  .modal:has(.reset-password-form-complete) {
+    width: fit-content;
+  }
+
+  .modal-body:has(.form-errors) {
+    margin-bottom: 25px;
+  }
+
+  .modal-body {
+    margin: 0px 5px 0px 5px;
+    clear: both;
+  }
+
+  .modal-header {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 35px;
+  }
+
+  .modal-title {
+    position: fixed;
+    margin: 5px 0px 0px 5px;
+  }

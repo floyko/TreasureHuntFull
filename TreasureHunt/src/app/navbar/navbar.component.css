@@ -1,0 +1,34 @@
+.buttons {
+    margin-left: 10px;
+}
+
+.logout-button {
+    float: right;
+    cursor: pointer;
+    line-height: 55px;
+}
+
+.logout-button:hover {
+    color: blue;
+}
+
+nav {
+    height: 60px;
+    background-color: lightskyblue;
+}
+
+.new-game-button {
+    margin-left: 10px;
+    line-height: 55px;
+    cursor: pointer;
+}
+
+.new-game-button:hover {
+    color: blue;
+}
+
+.title {
+    margin-left: 10px;
+    font: 30px/55px bold;
+    cursor: context-menu;
+}

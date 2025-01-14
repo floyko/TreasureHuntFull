@@ -1,0 +1,29 @@
+.email {
+    border: solid 1px black;
+    line-height: 25px;
+    width: 65%;
+    font-size: 18px;
+    margin: 10px 0px 25px 0px;
+}
+
+.email-error {
+    margin: 10px 0px 10px 0px;
+}
+
+.login-form {
+    height: 120px;
+}
+
+.login-label {
+    width: 30%;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.password {
+    border: solid 1px black;
+    line-height: 25px;
+    width: 65%;
+    font-size: 18px;
+    margin: 10px 0px 0px 0px;
+}

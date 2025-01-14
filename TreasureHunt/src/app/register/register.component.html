@@ -1,0 +1,79 @@
+<button mat-stroked-button class="register-button" (click)="openRegisterModal()">Register</button>
+<app-modal [receivedModalId]="registerModalId" [formGroup]="this.registerForm" (save)="registerEvent()" (cancel)="cancelEvent()">
+    <form [formGroup]="this.registerForm" class="register-form">
+        <label for="register-username" class="register-label">Username</label>
+        <input
+            id="register-username"
+            class="username"
+            type="text"
+            formControlName="username"
+            placeholder="Please enter a username"
+            [ngClass]="(this.registerForm.get('username')?.touched && this.registerForm.get('username')?.errors) || this.errors.get('username')?.backendErrors ? 'error-input' : ''"
+            (blur)="this.checkIfUpdating('username')">
+        <div class="form-errors" *ngIf="this.registerForm.get('username')?.touched && this.registerForm.get('username')?.errors || this.errors.get('username')?.backendErrors">
+            {{this.errors.get("username")?.msg}}
+        </div>
+        <label for="register-email" class="register-label">Email</label>
+        <input 
+            id="register-email"
+            class="email"
+            type="email"
+            formControlName="email"
+            placeholder="Please enter your email"
+            [ngClass]="(this.registerForm.get('email')?.touched && this.registerForm.get('email')?.errors)  || this.errors.get('email')?.backendErrors ? 'error-input' : ''"
+            (blur)="this.checkIfUpdating('email')">
+        <div class="form-errors" *ngIf="(this.registerForm.get('email')?.touched && this.registerForm.get('email')?.errors) || this.errors.get('email')?.backendErrors">
+            {{this.errors.get("email")?.msg}}
+        </div>
+        <label for="register-password" class="register-label">Password</label>
+        <input 
+            id="register-password"
+            class="password"
+            type="password"
+            formControlName="password"
+            placeholder="*********"
+            [ngClass]="(this.registerForm.get('password')?.touched && this.registerForm.get('password')?.errors) || this.errors.get('password')?.backendErrors ? 'error-input' : ''"
+            (blur)="this.checkIfUpdating('password')">
+        <div class="form-errors" *ngIf="(this.registerForm.get('password')?.touched && this.registerForm.get('password')?.errors) || this.errors.get('password')?.backendErrors">
+            {{this.errors.get("password")?.msg}}
+        </div>
+        <div formGroupName="securityQuestions">
+            <label for="register-question-one" class="register-label">Question One</label>
+            <select id="register-question-one" class="question-one" formControlName="securityQuestionOne" (change)="fiterSecurityQuestions($event, 1)">
+                <option *ngFor="let option of registerQuestionOneOptions" [value]="option.id">
+                    {{ option.question }}
+                </option>
+            </select>
+            <label for="register-answer-one" class="register-label">Answer One</label>
+            <input 
+                id="register-answer-one" 
+                class="answer-one" 
+                type="text" 
+                formControlName="securityAnswerOne" 
+                placeholder="Answer One"
+                [ngClass]="(this.registerForm.get('securityQuestions.securityAnswerOne')?.touched && this.registerForm.get('securityQuestions.securityAnswerOne')?.errors) || this.errors.get('securityAnswerOne')?.backendErrors ? 'error-input' : ''"
+                (blur)="this.checkIfUpdating('securityAnswerOne')">
+            <div class="form-errors" *ngIf="(this.registerForm.get('securityQuestions.securityAnswerOne')?.touched && this.registerForm.get('securityQuestions.securityAnswerOne')?.errors) || this.errors.get('securityAnswerOne')?.backendErrors">
+                {{this.errors.get("securityAnswerOne")?.msg}}
+            </div>
+            <label for="register-question-two" class="register-label">Question Two</label>
+            <select id="register-question-two" class="question-two" formControlName="securityQuestionTwo" (change)="fiterSecurityQuestions($event, 2)">
+                <option *ngFor="let option of registerQuestionTwoOptions" [value]="option.id">
+                    {{ option.question }}
+                </option>
+            </select>
+            <label for="register-answer-two" class="register-label">Answer Two</label>
+            <input 
+            id="register-answer-two" 
+            class="answer-two" 
+            type="text" 
+            formControlName="securityAnswerTwo" 
+            placeholder="Answer Two" 
+            [ngClass]="(this.registerForm.get('securityQuestions.securityAnswerTwo')?.touched && this.registerForm.get('securityQuestions.securityAnswerTwo')?.errors)  || this.errors.get('securityAnswerTwo')?.backendErrors ? 'error-input' : ''"
+            (blur)="this.checkIfUpdating('securityAnswerTwo')">
+            <div class="form-errors" *ngIf="(this.registerForm.get('securityQuestions.securityAnswerTwo')?.touched && this.registerForm.get('securityQuestions.securityAnswerTwo')?.errors) || this.errors.get('securityAnswerTwo')?.backendErrors">
+                {{this.errors.get("securityAnswerTwo")?.msg}}
+            </div>
+        </div>
+    </form>
+</app-modal>

@@ -1,0 +1,7 @@
+<mat-grid-list [cols]="cols" rowHeight="200px">
+    <mat-grid-tile *ngFor="let box of boxes" [ngClass]="box.className" [style.background-color]="box.backgroundColor" (click)="onBoxClick(box)">
+    </mat-grid-tile>
+</mat-grid-list>
+<div class="guesses">Guesses: {{ this.guesses }}</div>
+<div class="guesses-remaining">Guesses Remaining: {{ this.guessesRemaining }}</div>
+<app-modal [receivedModalId]="modalId" (save)="playAgainButton()" (cancel)="cancelButton()"></app-modal>

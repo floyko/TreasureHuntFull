@@ -1,0 +1,15 @@
+<nav>
+   <span class="title">
+      Treasure Hunt
+   </span>
+   <span *ngIf="!loggedIn">
+      <app-login class="buttons"></app-login>
+      <app-register class="buttons"></app-register>
+   </span>
+   <span *ngIf="loggedIn">
+      <a class="new-game-button" type="button" (click)="startNewGame()">New Game</a>
+      <a class="logout-button" type="button" (click)="logOut()">Logout</a>
+      <app-settings></app-settings>
+      <app-history></app-history>
+   </span>
+</nav>
