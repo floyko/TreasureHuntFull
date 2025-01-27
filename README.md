@@ -1,7 +1,6 @@
 <h1 align="center" >Treasure Hunt</h1>
 <h2>A fully functional project written in Javascript (Angular.JS) and Node.JS with a MySQL database that is a simple game of chance</h2>
 <h2> Watch the following video that show cases what this project does</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J3y_GAf4KXc?si=stuz5N9WpxPkV8rD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 <h2>How to install this project</h2>
