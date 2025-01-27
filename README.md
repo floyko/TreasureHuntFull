@@ -1,6 +1,7 @@
 <h1 align="center" >Treasure Hunt</h1>
 <h2>A fully functional project written in Javascript (Angular.JS) and Node.JS that is a simple game of chance</h2>
 <h2> Watch the following video that show cases what this project does</h2>
+https://youtu.be/J3y_GAf4KXc
 
 <h2>How to install this project</h2>
 
