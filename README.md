@@ -1,9 +1,9 @@
-<h1 align="center" >Treasure Hunt</h1>
-<h2>A fully functional project written in Javascript (Angular.JS) and Node.JS with a MySQL database that is a simple game of chance</h2>
-<h2> Watch the following video that show cases what this project does</h2>
+# Treasure Hunt
+## A fully functional project written in Javascript (Angular.JS) and Node.JS with a MySQL database that is a simple game of chance
+## Watch the following video that show cases what this project does
+[![Treasure Hunt Example Video](https://img.youtube.com/vi/J3y_GAf4KXc/0.jpg)](https://www.youtube.com/watch?v=J3y_GAf4KXc)
 
-
-<h2>How to install this project</h2>
+## How to install this project
 
 1. [Make sure Node.js and npm are installed](https://nodejs.org/en/download)
 2. [Make sure MySQL is installed](https://dev.mysql.com/downloads/)
@@ -18,3 +18,5 @@
 In the first terminal click the link that will open a new browser tab with the game. See example of terminal below!
 
 ![After npm start](https://github.com/user-attachments/assets/ef8055c7-64d1-44d0-bed3-9b477db8d034)
+
+**Please note you may need to change the [config.json](/TreasureHuntBackend/config/config.json) file in [TreasureHuntBackend](/TreasureHuntBackend/) to match your MySQL and database access rights.**
